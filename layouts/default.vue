@@ -14,7 +14,9 @@ useSeoMeta({
 <template>
     <div class="source-code-pro bg-[#111B31] min-h-screen text-gray-50">
         <FrontHeader />
-        <slot />
+        <PageTransition>
+            <slot />
+        </PageTransition>
     </div>
 </template>
 
