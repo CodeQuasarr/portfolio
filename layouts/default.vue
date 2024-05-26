@@ -12,7 +12,7 @@ useSeoMeta({
 </script>
 
 <template>
-    <div class="fira-code bg-[#1c1c22] min-h-screen text-gray-50">
+    <div class="source-code-pro bg-[#111B31] min-h-screen text-gray-50">
         <FrontHeader />
         <slot />
     </div>
@@ -21,6 +21,11 @@ useSeoMeta({
 <style scoped>
 .fira-code {
     font-family: "Fira Code", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+.source-code-pro {
+    font-family: "Source Code Pro", monospace;
     font-optical-sizing: auto;
     font-style: normal;
 }
