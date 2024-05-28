@@ -14,14 +14,33 @@ const links = [
     {
         label: 'Résumé',
         icon: 'i-heroicons-document',
-        to: '/resume',
+        to: '/project',
     },
     {
         label: 'Contact',
         icon: 'i-heroicons-chat',
-        to: '/contact',
+        to: '/project',
     },
 ]
+
+const props = defineProps<{
+    animatePageOut: (href: string) => void
+}>()
+
+const pathName = ref('')
+// Watch for route changes
+watch(() => useRoute().path, (newPath, oldPath) => {
+    console.log('Route changed from', oldPath, 'to', newPath);
+    pathName.value = newPath;
+});
+const activeAnimation = (href: string) => {
+    if (pathName.value === href) return
+    props.animatePageOut(href)
+}
+
+onMounted(() => {
+    pathName.value = useRoute().path
+})
 
 </script>
 
@@ -39,7 +58,7 @@ const links = [
                     <ULink
                         v-for="link in links"
                         :key="link.to"
-                        :to="link.to"
+                        @click="activeAnimation(link.to)"
                         active-class="border-b border-red-300 text-red-300"
                         inactive-class="capitalize font-medium hover:text-red-300 transition-colors duration-300"
                     >
