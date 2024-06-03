@@ -61,7 +61,7 @@ onUpdated(animatePageIn);
 </script>
 
 <template>
-    <div class="source-code-pro bg-[#26262F] min-h-screen text-gray-50">
+    <div class="min-h-screen text-gray-50">
         <FrontHeader :animatePageOut="animatePageOut"/>
         <div>
             <div ref="banner1" class="min-h-screen bg-[#4B4B5F] z-10 fixed top-0 left-0 w-1/6" />
@@ -75,7 +75,7 @@ onUpdated(animatePageIn);
     </div>
 </template>
 
-<style scoped>
+<style>
 .fira-code {
     font-family: "Fira Code", monospace;
     font-optical-sizing: auto;
@@ -86,5 +86,8 @@ onUpdated(animatePageIn);
     font-family: "Source Code Pro", monospace;
     font-optical-sizing: auto;
     font-style: normal;
+}
+.h1 {
+    @apply text-[48px] xl:text-[80px] leading-[1.1]  font-semibold;
 }
 </style>

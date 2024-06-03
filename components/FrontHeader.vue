@@ -49,7 +49,7 @@ onMounted(() => {
         <UContainer class="flex justify-between items-center">
             <NuxtLink to="/">
                 <h1 class="text-4xl font-semibold">
-                    Daré<span class="text-red-500">.</span>
+                    Daré<span class="text-accent">.</span>
                 </h1>
             </NuxtLink>
 
@@ -65,7 +65,7 @@ onMounted(() => {
                         {{ link.label }}
                     </ULink>
                 </nav>
-                <UButton to="/contact" class="bg-[#1E3057] hover:bg-red-600">Me recruter</UButton>
+                <UButton to="/contact" class="bg-cyan-700 hover:bg-red-600">Me recruter</UButton>
             </div>
 
             <div class="xl:hidden">
