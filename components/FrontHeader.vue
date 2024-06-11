@@ -14,7 +14,7 @@ const links = [
     {
         label: 'Résumé',
         icon: 'i-heroicons-document',
-        to: '/project',
+        to: '/resume',
     },
     {
         label: 'Contact',
@@ -38,6 +38,7 @@ const activeAnimation = (href: string) => {
     props.animatePageOut(href)
 }
 
+const isOpen = ref(false)
 onMounted(() => {
     pathName.value = useRoute().path
 })
@@ -69,11 +70,27 @@ onMounted(() => {
             </div>
 
             <div class="xl:hidden">
-                <button>
+                <UButton class="text-accent" variant="none" label="Open" @click="isOpen = true" >
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
                     </svg>
-                </button>
+                </UButton>
+
+                <USlideover v-model="isOpen">
+                    <div class="p-4 flex-1">
+                        <UButton
+                            color="gray"
+                            variant="ghost"
+                            size="sm"
+                            icon="i-heroicons-x-mark-20-solid"
+                            class="flex sm:hidden absolute end-5 top-5 z-10"
+                            square
+                            padded
+                            @click="isOpen = false"
+                        />
+                        <Placeholder class="h-full" />
+                    </div>
+                </USlideover>
             </div>
         </UContainer>
     </header>
