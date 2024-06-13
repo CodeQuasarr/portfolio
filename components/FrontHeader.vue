@@ -70,7 +70,10 @@ onMounted(() => {
             </div>
 
             <div class="xl:hidden">
-                <UButton class="text-accent" variant="none" label="Open" @click="isOpen = true" >
+                <UButton
+                    class="text-accent"
+                    label="Open"
+                    @click="isOpen = true" >
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
                     </svg>
@@ -88,7 +91,7 @@ onMounted(() => {
                             padded
                             @click="isOpen = false"
                         />
-                        <Placeholder class="h-full" />
+<!--                        <Placeholder class="h-full" />-->
                     </div>
                 </USlideover>
             </div>

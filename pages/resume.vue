@@ -61,42 +61,22 @@ const items = [
         icon: 'heroicons-outline:academic-cap',
         description: 'Découvrez mes compétences',
         data: [
-            {
-                title: 'Développement web',
-                allIcons: [
-                    {name: 'Vue.js', icon: 'teenyicons:vue-outline'},
-                    {name: 'Nuxt.js', icon: 'mdi:nuxt'},
-                    {name: 'Nest.js', icon: 'simple-icons:nestjs'},
-                    {name: 'Angular', icon: 'mdi:angularjs'},
-                    {name: 'Golang', icon: 'fa6-brands:golang'},
-                    {name: 'PHP', icon: 'fa6-brands:php'},
-                    {name: 'Laravel', icon: 'teenyicons:laravel-outline'},
-                    {name: 'HTML5', icon: 'iconoir:html5'},
-                    {name: 'CSS3', icon: 'tdesign:css3'},
-                ],
-            },
-            {
-                title: 'Développement collaboratif',
-                allIcons: [
-                    {name: 'Github', icon: 'ph:github-logo-bold'},
-                    {name: 'Jira', icon: 'arcticons:jira'},
-                    {name: 'Trello', icon: 'fa:trello'},
-                ],
-            },
-            {
-                title: 'Développement mobile',
-                allIcons: [
-                    {name: 'Flutter', icon: 'simple-icons:flutter'},
-                ],
-            },
-            {
-                title: 'Développement logiciel',
-                allIcons: [
-                    {name: 'Java', icon: 'fa6-brands:java'},
-                    {name: 'C#', icon: 'fa6-brands:c-sharp'},
-                    {name: 'Python', icon: 'fa6-brands:python'},
-                ],
-            },
+            {name: 'PHP', icon: 'fa6-brands:php'},
+            {name: 'Python', icon: 'fa6-brands:python'},
+            {name: 'Java', icon: 'fa6-brands:java'},
+            {name: 'Laravel', icon: 'teenyicons:laravel-outline'},
+            {name: 'VueJs', icon: 'teenyicons:vue-outline'},
+            {name: 'NuxtJs', icon: 'mdi:nuxt'},
+            {name: 'NestJs', icon: 'simple-icons:nestjs'},
+            {name: 'Angular', icon: 'mdi:angularjs'},
+            {name: 'Golang', icon: 'fa6-brands:golang'},
+            {name: 'HTML5', icon: 'iconoir:html5'},
+            {name: 'CSS3', icon: 'tdesign:css3'},
+            {name: 'Github', icon: 'ph:github-logo-bold'},
+            {name: 'Jira', icon: 'arcticons:jira'},
+            {name: 'Trello', icon: 'fa:trello'},
+            {name: 'Flutter', icon: 'simple-icons:flutter'},
+            {name: 'C#', icon: 'fa6-brands:c-sharp'},
         ]
     },
 ];
@@ -183,8 +163,26 @@ const items = [
                     </div>
 
                     <div v-if="item.key === 'skills'" class="border-none space-y-3">
-                        <div>
-                            
+                        <div class="flex flex-col gap-[30px] text-center xl:text-start">
+                            <h3 class="text-4xl font-bold">{{item.label}}</h3>
+                            <p class="max-w-[600px] text-gray-300 mx-auto xl:mx-0">{{item.description}}</p>
+
+                            <div class="h-[400px] overflow-y-scroll">
+                                <ul class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                                    <li v-for="(skill, index) in item.data" :key="item.key">
+
+                                        <UTooltip
+                                            class="group bg-[#23232b] h-[120px] rounded-xl flex justify-center items-center"
+                                            :text="skill.name"
+                                            :popper="{ placement: 'top' }"
+                                        >
+                                            <div class="text-gray-300 group-hover:text-accent">
+                                                <Icon :name="skill.icon" class=" w-12 h-12"/>
+                                            </div>
+                                        </UTooltip>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </UCard>
@@ -194,5 +192,19 @@ const items = [
 </template>
 
 <style scoped>
+/* width*/
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #26262F;
+}
+
+
+::-webkit-scrollbar-thumb {
+    background: #00FFFF;
+    border-radius: 5px;
+}
 
 </style>
