@@ -6,7 +6,12 @@ const items = [
         key: 'about-me',
         label: 'A Propos de Moi',
         icon: 'heroicons-outline:user-circle',
-        description: 'Découvrez qui je suis',
+        description: 'Passionné d\'informatique et autodidacte, il a transformé chaque défi en opportunité d\'apprentissage, acquérant une expertise fullstack en parallèle de son master en alternance. Sa détermination et sa capacité à allier théorie et pratique font de lui un candidat exceptionnel. Prêt à relever les défis les plus ambitieux, son parcours atypique témoigne de sa résilience et de son talent.',
+        data: [
+            { name: 'Email', value: 'dsanyaronke@gmail.com', },
+            { name: 'Adresse', value: 'Toute la France', },
+            { name: 'Expérience', value: '3 ans', },
+        ]
     },
     {
         key: 'experience',
@@ -119,7 +124,21 @@ const items = [
                     }"
                 >
                     <div v-if="item.key === 'about-me'" class="border-none space-y-3">
-                        A propos de moi
+                        <div class="flex flex-col gap-[30px]">
+                            <h3 class="text-4xl font-bold">{{item.label}}</h3>
+                            <p class="text-gray-300 mx-auto">{{item.description}}</p>
+
+                            <ul class="grid grid-cols-1 gap-y-6">
+                                <li
+                                    v-for="(about, index) in item.data"
+                                    :key="item.key"
+                                    class="flex items-center xl:items-start gap-4"
+                                >
+                                    <span class="text-gray-300"> {{ about.name }}: </span>
+                                    <span class="text-xl"> {{ about.value }}</span>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
 
                     <div v-if="item.key === 'experience'" class="border-none space-y-3">
@@ -168,7 +187,7 @@ const items = [
                             <p class="max-w-[600px] text-gray-300 mx-auto xl:mx-0">{{item.description}}</p>
 
                             <div class="h-[400px] overflow-y-scroll">
-                                <ul class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                                <ul class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
                                     <li v-for="(skill, index) in item.data" :key="item.key">
 
                                         <UTooltip
