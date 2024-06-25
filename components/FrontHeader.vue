@@ -19,7 +19,7 @@ const links = [
     {
         label: 'Contact',
         icon: 'i-heroicons-chat',
-        to: '/project',
+        to: '/contact',
     },
 ]
 
