@@ -66,7 +66,7 @@ onMounted(() => {
                         {{ link.label }}
                     </ULink>
                 </nav>
-                <UButton to="/contact" class="bg-cyan-700 hover:bg-red-600">Me recruter</UButton>
+                <UButton to="/contact" class="bg-accent hover:bg-accent_hover text-black">Me recruter</UButton>
             </div>
 
             <div class="xl:hidden">

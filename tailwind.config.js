@@ -12,6 +12,8 @@ export default {
     extend: {
       colors: {
         accent: '#00FFFF'
+        // accent: '#00ff99',
+        // accent_hover: '#00cc7a'
       },
     },
   },

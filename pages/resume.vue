@@ -8,9 +8,9 @@ const items = [
         icon: 'heroicons-outline:user-circle',
         description: 'Passionné d\'informatique et autodidacte, il a transformé chaque défi en opportunité d\'apprentissage, acquérant une expertise fullstack en parallèle de son master en alternance. Sa détermination et sa capacité à allier théorie et pratique font de lui un candidat exceptionnel. Prêt à relever les défis les plus ambitieux, son parcours atypique témoigne de sa résilience et de son talent.',
         data: [
-            { name: 'Email', value: 'dsanyaronke@gmail.com', },
-            { name: 'Adresse', value: 'Toute la France', },
-            { name: 'Expérience', value: '3 ans', },
+            {name: 'Email', value: 'dsanyaronke@gmail.com',},
+            {name: 'Adresse', value: 'Toute la France',},
+            {name: 'Expérience', value: '3 ans',},
         ]
     },
     {
@@ -92,19 +92,20 @@ const items = [
     <UContainer>
         <UTabs
             :defaultIndex="1"
-            orientation="vertical"
             :items="items"
-            class="w-full"
             :ui="{
                 wrapper: 'flex flex-wrap xl:flex-nowrap gap-10',
                 list: {
                     width: 'w-full xl:w-2/5',
-                    background: 'bg-transparent',
+                    background: '',
+                    marker: {
+                        background: 'bg-accent',
+                    },
                     tab: {
                         base: 'my-3 relative inline-flex items-center justify-center flex-shrink-0 w-full  disabled:cursor-not-allowed disabled:opacity-75 transition-colors duration-200 ease-out',
                         background: '',
                             active: 'text-gray-900 bg-accent dark:text-white',
-                            inactive: 'text-gray-500 bg-[#23232b] ',
+                            inactive: 'text-gray-500 bg-white/5 ',
                             height: 'h-14',
                             padding: 'px-3',
                             size: 'text-sm',
@@ -114,19 +115,21 @@ const items = [
                     }
                 }
             }"
+            class="w-full"
+            orientation="vertical"
         >
             <template #item="{ item }">
                 <UCard
-                    class="border-none"
                     :ui="{
                         background: 'bg-transparent border-none dark:bg-gray-900',
                         ring: '',
                     }"
+                    class="border-none"
                 >
                     <div v-if="item.key === 'about-me'" class="border-none space-y-3">
                         <div class="flex flex-col gap-[30px]">
-                            <h3 class="text-4xl font-bold">{{item.label}}</h3>
-                            <p class="text-gray-300 mx-auto">{{item.description}}</p>
+                            <h3 class="text-4xl font-bold">{{ item.label }}</h3>
+                            <p class="text-gray-300 mx-auto">{{ item.description }}</p>
 
                             <ul class="grid grid-cols-1 gap-y-6">
                                 <li
@@ -143,17 +146,19 @@ const items = [
 
                     <div v-if="item.key === 'experience'" class="border-none space-y-3">
                         <div class="flex flex-col gap-[30px] text-center xl:text-start">
-                            <h3 class="text-4xl font-bold">{{item.label}}</h3>
-                            <p class="max-w-[600px] text-gray-300 mx-auto xl:mx-0">{{item.description}}</p>
+                            <h3 class="text-4xl font-bold">{{ item.label }}</h3>
+                            <p class="max-w-[600px] text-gray-300 mx-auto xl:mx-0">{{ item.description }}</p>
 
                             <div class="h-[400px]">
                                 <ul class="grid grid-cols-1 lg:grid-cols-2 gap-4">
-                                    <li v-for="(exp, index) in item.data" :key="item.key" class="bg-[#23232b] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1">
-                                        <span class="text-accent">{{exp.duration}}</span>
-                                        <h3 class="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">{{exp.position}}</h3>
+                                    <li v-for="(exp, index) in item.data" :key="item.key"
+                                        class="bg-[#23232b] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1">
+                                        <span class="text-accent">{{ exp.duration }}</span>
+                                        <h3 class="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
+                                            {{ exp.position }}</h3>
                                         <div class="flex items-center gap-3">
                                             <span class="w-[6px] h-[6px] rounded-full bg-accent"></span>
-                                            <p class="text-gray-300">{{exp.company}}</p>
+                                            <p class="text-gray-300">{{ exp.company }}</p>
                                         </div>
                                     </li>
                                 </ul>
@@ -163,17 +168,19 @@ const items = [
 
                     <div v-if="item.key === 'formation'" class="border-none space-y-3">
                         <div class="flex flex-col gap-[30px] text-center xl:text-start">
-                            <h3 class="text-4xl font-bold">{{item.label}}</h3>
-                            <p class="max-w-[600px] text-gray-300 mx-auto xl:mx-0">{{item.description}}</p>
+                            <h3 class="text-4xl font-bold">{{ item.label }}</h3>
+                            <p class="max-w-[600px] text-gray-300 mx-auto xl:mx-0">{{ item.description }}</p>
 
                             <div class="h-[400px] overflow-hidden">
                                 <ul class="grid grid-cols-1 lg:grid-cols-2 gap-4">
-                                    <li v-for="(formation, index) in item.data" :key="item.key" class="bg-[#23232b] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1">
-                                        <span class="text-accent">{{formation.duration}}</span>
-                                        <h3 class="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">{{formation.title}}</h3>
+                                    <li v-for="(formation, index) in item.data" :key="item.key"
+                                        class="bg-[#23232b] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1">
+                                        <span class="text-accent">{{ formation.duration }}</span>
+                                        <h3 class="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
+                                            {{ formation.title }}</h3>
                                         <div class="flex items-center gap-3">
                                             <span class="w-[6px] h-[6px] rounded-full bg-accent"></span>
-                                            <p class="text-gray-300">{{formation.school}}</p>
+                                            <p class="text-gray-300">{{ formation.school }}</p>
                                         </div>
                                     </li>
                                 </ul>
@@ -183,17 +190,17 @@ const items = [
 
                     <div v-if="item.key === 'skills'" class="border-none space-y-3">
                         <div class="flex flex-col gap-[30px] text-center xl:text-start">
-                            <h3 class="text-4xl font-bold">{{item.label}}</h3>
-                            <p class="max-w-[600px] text-gray-300 mx-auto xl:mx-0">{{item.description}}</p>
+                            <h3 class="text-4xl font-bold">{{ item.label }}</h3>
+                            <p class="max-w-[600px] text-gray-300 mx-auto xl:mx-0">{{ item.description }}</p>
 
                             <div class="h-[400px] overflow-y-scroll">
                                 <ul class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
                                     <li v-for="(skill, index) in item.data" :key="item.key">
 
                                         <UTooltip
-                                            class="group bg-[#23232b] h-[120px] rounded-xl flex justify-center items-center"
-                                            :text="skill.name"
                                             :popper="{ placement: 'top' }"
+                                            :text="skill.name"
+                                            class="group bg-[#23232b] h-[120px] rounded-xl flex justify-center items-center"
                                         >
                                             <div class="text-gray-300 group-hover:text-accent">
                                                 <Icon :name="skill.icon" class=" w-12 h-12"/>
