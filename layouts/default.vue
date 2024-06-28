@@ -36,33 +36,35 @@ const animatePageIn = () => {
     }
 };
 
-const animatePageOut = (href: string) => {
-    if (banner1.value && banner2.value && banner3.value && banner4.value && banner5.value && banner6.value) {
-        const tl = gsap.timeline();
-
-        tl
-            .set([banner1.value, banner2.value, banner3.value, banner4.value, banner5.value, banner6.value], {
-                yPercent: -100,
-            })
-            .to([banner1.value, banner2.value, banner3.value, banner4.value, banner5.value, banner6.value], {
-                yPercent: 0,
-                stagger: 0.1,
-                onComplete: () => {
-                    route.push(href)
-                }
-            });
-    }
-};
+// const animatePageOut = (href: string) => {
+//     if (banner1.value && banner2.value && banner3.value && banner4.value && banner5.value && banner6.value) {
+//         const tl = gsap.timeline();
+//
+//         tl
+//             .set([banner1.value, banner2.value, banner3.value, banner4.value, banner5.value, banner6.value], {
+//                 yPercent: -100,
+//             })
+//             .to([banner1.value, banner2.value, banner3.value, banner4.value, banner5.value, banner6.value], {
+//                 yPercent: 0,
+//                 stagger: 0.1,
+//                 onComplete: () => {
+//                     route.push(href)
+//                 }
+//             });
+//     }
+// };
 
 // Exécuter l'animation à chaque montage et mise à jour
-onMounted(animatePageIn);
-onUpdated(animatePageIn);
-
+// onMounted(animatePageIn);
+// onUpdated(animatePageIn);
+onMounted(() => {
+    animatePageIn()
+})
 </script>
 
 <template>
     <div class="min-h-screen text-gray-50">
-        <FrontHeader :animatePageOut="animatePageOut"/>
+        <FrontHeader />
         <div>
             <div ref="banner1" class="min-h-screen bg-[#4B4B5F] z-10 fixed top-0 left-0 w-1/6" />
             <div ref="banner2" class="min-h-screen bg-[#4B4B5F] z-10 fixed top-0 left-[16.6667%] w-1/6" />

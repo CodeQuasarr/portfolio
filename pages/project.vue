@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import {Swiper, SwiperSlide} from "swiper/vue";
 import 'swiper/css';
+import gsap from "gsap";
 
 
 const projects = [
@@ -69,6 +70,24 @@ const slidePrev = () => {
     theSwiper.value.slidePrev();
 }
 
+const projectDescription = ref<HTMLElement | null>(null);
+const projectImage = ref<HTMLElement | null>(null);
+const animateImageIn = () => {
+    if (projectDescription.value) {
+        gsap.fromTo(
+            projectDescription.value,
+            { opacity: 0 },
+            { opacity: 1, duration: 1, delay: 0.3 }
+        );
+
+        gsap.fromTo(
+            projectImage.value, { opacity: 0 },
+            { opacity: 1, duration: 1, delay: 0.4 }
+        );
+    }
+};
+onMounted(animateImageIn)
+
 </script>
 
 <template>
@@ -76,7 +95,7 @@ const slidePrev = () => {
         <div>
             <UContainer>
                 <div class="flex flex-col xl:flex-row xl:gap-[30px]">
-                    <div class="w-full xl:w-[50%] xl;h-[460px] flex flex-col xl:justify-between order-2 xl:order-none">
+                    <div ref="projectDescription" class="w-full xl:w-1/2 xl;h-[460px] flex flex-col xl:justify-between order-2 xl:order-none">
                         <div class="flex flex-col gap-8 h-[50%]">
                             <!-- outline num-->
                             <div class="text-8xl leading-none font-extrabold text-outline">
@@ -123,7 +142,7 @@ const slidePrev = () => {
                         </div>
                     </div>
 
-                    <div class="w-full xl:w-[50%]">
+                    <div ref="projectImage" class="w-full xl:w-1/2">
                         <Swiper
                             @swiper="onSwiper"
                             @slideChange="handleSlideChange"
@@ -144,7 +163,7 @@ const slidePrev = () => {
                                         <NuxtImg
                                             :src="project.image"
                                             alt="project image"
-                                            class="object-cover"
+                                            class="object-cover w-full h-full"
                                         />
                                     </div>
                                 </div>

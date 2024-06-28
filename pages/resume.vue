@@ -92,7 +92,7 @@ const items = [
 <template>
     <UContainer>
         <UTabs
-            :defaultIndex="1"
+            :defaultIndex="2"
             :items="items"
             :ui="{
                 wrapper: 'flex flex-wrap xl:flex-nowrap gap-10',
@@ -153,7 +153,7 @@ const items = [
                             <div class="h-[400px]">
                                 <ul class="grid grid-cols-1 lg:grid-cols-2 gap-4">
                                     <li v-for="(exp, index) in item.data" :key="item.key"
-                                        class="bg-[#23232b] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1">
+                                        class="bg-white/5 h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1">
                                         <span class="text-accent">{{ exp.duration }}</span>
                                         <h3 class="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
                                             {{ exp.position }}</h3>
@@ -175,7 +175,7 @@ const items = [
                             <div class="h-[400px] overflow-hidden">
                                 <ul class="grid grid-cols-1 lg:grid-cols-2 gap-4">
                                     <li v-for="(formation, index) in item.data" :key="item.key"
-                                        class="bg-[#23232b] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1">
+                                        class="bg-white/5 h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1">
                                         <span class="text-accent">{{ formation.duration }}</span>
                                         <h3 class="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
                                             {{ formation.title }}</h3>
@@ -201,7 +201,7 @@ const items = [
                                         <UTooltip
                                             :popper="{ placement: 'top' }"
                                             :text="skill.name"
-                                            class="group bg-[#23232b] h-[120px] rounded-xl flex justify-center items-center"
+                                            class="group bg-white/5 h-[100px] rounded-xl flex justify-center items-center"
                                         >
                                             <div class="text-gray-300 group-hover:text-accent">
                                                 <Icon :name="skill.icon" class=" w-12 h-12"/>
