@@ -6,7 +6,7 @@ import gsap from "gsap";
 
 const info = [
     { icon: 'material-symbols:call', title: 'Télephone', description: '123-456-789' },
-    { icon: 'material-symbols:mail-rounded', title: 'Email', description: 'dsanyaronke@gmail.com'},
+    { icon: 'material-symbols:mail-rounded', title: 'Email', description: 'codecaqaze@gmail.com'},
     { icon: 'material-symbols:location-on', title: 'Adresse', description: '1234 rue de la rue' }
 ];
 
@@ -15,6 +15,7 @@ const options = [
     { value: 'front_back', label: 'Développeur Full Stack' },
     { value: 'back', label: 'Développeur Back-end' },
 ]
+const choice = ref()
 
 const schema = z.object({
     email: z.string().nonempty('Please enter your full name').email('Le prenom doit contenir au moins 2 caractères'),
@@ -38,12 +39,15 @@ const state = reactive({
 })
 
 async function onSubmit (event: FormSubmitEvent<Schema>) {
-   const {data, error} = await useFetch<any>('api/contact', {
+    const fields = {
+        ...event.data,
+        object: choice.value.value,
+    }
+   const {data, error} = await useFetch('api/contact', {
         method: 'POST',
-        body: JSON.stringify(event.data),
-        headers: {
-            'Content-type': 'application/json; charset=UTF-8',
-        },
+        body: JSON.stringify(fields),
+        watch: false
+
     });
 }
 
@@ -138,7 +142,7 @@ onMounted(animateImageIn)
                                         },
                                         ring: 'ring-1 ring-white/5 dark:ring-gray-700',
                                     }"
-                                    v-model="state.object"
+                                    v-model="choice"
                                     placeholder="Select..."
                                     :options="options"
                                 />
