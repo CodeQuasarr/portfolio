@@ -19,11 +19,12 @@ onMounted(animateImageIn);
 <template>
     <div class="relative w-full h-full">
         <div ref="myPicture" class="w-[298px] h-[298px] xl:w-[498px] xl:h-[498px] mix-blend-lighten">
-            <NuxtImg
-                src="profile/profile.webp"
-                class="object-contain w-full rounded-full"
+<!--            <NuxtImg-->
+<!--                src="profile/profile.webp"-->
+<!--                class="object-contain w-full rounded-full"-->
 
-            />
+<!--            />-->
+            <img src="~/assets/images/profile/profile.webp" alt="profile" class="object-contain w-full rounded-full" />
         </div>
     </div>
 </template>

@@ -2,15 +2,14 @@
 import {Swiper, SwiperSlide} from "swiper/vue";
 import 'swiper/css';
 import gsap from "gsap";
-
-
+import project1Img from '~/assets/images/projects/project.png';
 const projects = [
     {
         num: "01",
         title: "Projet Netflixus",
         category: "Web",
         description: "Netflixus est une application de streaming vidéo qui permet de regarder des films et des séries en ligne.",
-        image: "projects/project.png",
+        image: project1Img,
         stack: [{name: "Vue 3", color: "red"}, {name: "Vue.js", color: "green"}],
         github: "https://github.com/CodeQuasarr/netflixus_app",
         url: "https://main--stramview.netlify.app/"
@@ -165,11 +164,12 @@ onMounted(animateImageIn)
                                     <div class="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10"></div>
                                     <!-- image -->
                                     <div class="relative w-full h-full">
-                                        <NuxtImg
-                                            :src="project.image"
-                                            alt="project image"
-                                            class="object-cover w-full h-full"
-                                        />
+<!--                                        <NuxtImg-->
+<!--                                            :src="project.image"-->
+<!--                                            alt="project image"-->
+<!--                                            class="object-cover w-full h-full"-->
+<!--                                        />-->
+                                        <img :src="project.image" alt="project image" class="object-cover w-full h-full">
                                     </div>
                                 </div>
                             </SwiperSlide>
