@@ -133,7 +133,7 @@ onMounted(animateImageIn)
                                     </UTooltip>
                                 </ULink>
                                 <!-- github -->
-                                <ULink class="mt-4" :to="project.url" target="_blank">
+                                <ULink class="mt-4" :to="project.github" target="_blank">
                                     <UTooltip
                                         :popper="{ placement: 'top' }"
                                         :text="project.title"
