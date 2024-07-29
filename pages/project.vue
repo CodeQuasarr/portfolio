@@ -10,7 +10,7 @@ const projects = [
         category: "Web",
         description: "Netflixus est une application de streaming vidéo qui permet de regarder des films et des séries en ligne.",
         image: project1Img,
-        stack: [{name: "Vue 3", color: "red"}, {name: "Vue.js", color: "green"}],
+        stack: [{name: "Vue 3", color: "red"}, {name: "Vue.js", color: "green"}, {name: "Tailwind Css", color: "green"}],
         github: "https://github.com/CodeQuasarr/netflixus_app",
         url: "https://main--stramview.netlify.app/"
     },

@@ -1,10 +1,8 @@
 <script lang="ts" setup>
 
-import Socials from "~/components/Socials.vue";
 import Photo from "~/components/Photo.vue";
 import Stats from "~/components/Stats.vue";
 import gsap from "gsap";
-import cv from "~/assets/cv.pdf";
 const description = ref<HTMLElement | null>(null);
 const animateImageIn = () => {
     if (description.value) {
@@ -34,10 +32,10 @@ onMounted(animateImageIn);
                     </p>
 
                     <div class="flex flex-col xl:flex-row items-center gap-8">
-                        <a :href="cv" target="_blank" icon="i-heroicons-arrow-down-tray" size="lg"
-                                 variant="outline" class="rounded-full px-6 py-4 uppercase border border-accent text-accent hover:bg-accent hover:text-black">
-                            <span>Télécharger Mon CV</span>
-                        </a>
+<!--                        <a :href="cv" target="_blank" icon="i-heroicons-arrow-down-tray" size="lg"-->
+<!--                                 variant="outline" class="rounded-full px-6 py-4 uppercase border border-accent text-accent hover:bg-accent hover:text-black">-->
+<!--                            <span>Télécharger Mon CV</span>-->
+<!--                        </a>-->
 <!--                        <div class="mb-8 xl:mb-0">-->
 <!--                            <Socials/>-->
 <!--                        </div>-->
