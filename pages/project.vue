@@ -7,49 +7,54 @@ import gsap from "gsap";
 const projects = [
     {
         num: "01",
-        title: "Projet 1",
-        category: "Fullstack",
-        description: "lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias aliquid amet",
-        image: "projects/project-1.png",
-        stack: [{name: "Laravel", color: "red"}, {name: "Vue.js", color: "green"}],
-        github: "https://github.com"
+        title: "Projet Netflixus",
+        category: "Web",
+        description: "Netflixus est une application de streaming vidéo qui permet de regarder des films et des séries en ligne.",
+        image: "projects/project.png",
+        stack: [{name: "Vue 3", color: "red"}, {name: "Vue.js", color: "green"}],
+        github: "https://github.com/CodeQuasarr/netflixus_app",
+        url: "https://main--stramview.netlify.app/"
     },
-    {
-        num: "02",
-        title: "Projet 2",
-        category: "Fullstack",
-        description: "Description du projet 2",
-        image: "projects/project-2.png",
-        stack: [{name: "Laravel", color: "red"}, {name: "Vue.js", color: "green"}],
-        github: "https://github.com"
-    },
-    {
-        num: "03",
-        title: "Projet 3",
-        category: "Fullstack",
-        description: "Description du projet 3",
-        image: "projects/project-1.png",
-        stack: [{name: "Laravel", color: "red"}, {name: "Vue.js", color: "green"}],
-        github: "https://github.com"
-    },
-    {
-        num: "04",
-        title: "Projet 4",
-        category: "Fullstack",
-        description: "Description du projet 4",
-        image: "projects/project-1.png",
-        stack: [{name: "Laravel", color: "red"}, {name: "Vue.js", color: "green"}],
-        github: "https://github.com"
-    },
-    {
-        num: "05",
-        title: "Projet 5",
-        category: "Fullstack",
-        description: "Description du projet 5",
-        image: "projects/project-1.png",
-        stack: [{name: "Laravel", color: "red"}, {name: "Vue.js", color: "green"}],
-        github: "https://github.com"
-    },
+    // {
+    //     num: "02",
+    //     title: "Projet 2",
+    //     category: "Fullstack",
+    //     description: "Description du projet 2",
+    //     image: "projects/project-2.png",
+    //     stack: [{name: "Laravel", color: "red"}, {name: "Vue.js", color: "green"}],
+    //     github: "https://github.com",
+    //     url: "https://main--netflixus.netlify.app/"
+    // },
+    // {
+    //     num: "03",
+    //     title: "Projet 3",
+    //     category: "Fullstack",
+    //     description: "Description du projet 3",
+    //     image: "projects/project-1.png",
+    //     stack: [{name: "Laravel", color: "red"}, {name: "Vue.js", color: "green"}],
+    //     github: "https://github.com",
+    //     url: "https://main--netflixus.netlify.app/"
+    // },
+    // {
+    //     num: "04",
+    //     title: "Projet 4",
+    //     category: "Fullstack",
+    //     description: "Description du projet 4",
+    //     image: "projects/project-1.png",
+    //     stack: [{name: "Laravel", color: "red"}, {name: "Vue.js", color: "green"}],
+    //     github: "https://github.com",
+    //     url: "https://main--netflixus.netlify.app/"
+    // },
+    // {
+    //     num: "05",
+    //     title: "Projet 5",
+    //     category: "Fullstack",
+    //     description: "Description du projet 5",
+    //     image: "projects/project-1.png",
+    //     stack: [{name: "Laravel", color: "red"}, {name: "Vue.js", color: "green"}],
+    //     github: "https://github.com",
+    //     url: "https://main--netflixus.netlify.app/"
+    // },
 ];
 
 const project = ref(projects[0]);
@@ -118,7 +123,7 @@ onMounted(animateImageIn)
 
                             <div class="flex items-center gap-4">
                                 <!-- live -->
-                                <ULink class="mt-4" to="/">
+                                <ULink class="mt-4" :to="project.url" target="_blank">
                                     <UTooltip
                                         :popper="{ placement: 'top' }"
                                         :text="project.title"
@@ -129,7 +134,7 @@ onMounted(animateImageIn)
                                     </UTooltip>
                                 </ULink>
                                 <!-- github -->
-                                <ULink class="mt-4" to="/">
+                                <ULink class="mt-4" :to="project.url" target="_blank">
                                     <UTooltip
                                         :popper="{ placement: 'top' }"
                                         :text="project.title"
