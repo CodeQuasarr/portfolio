@@ -5,9 +5,9 @@ import gsap from "gsap";
 
 
 const info = [
-    { icon: 'material-symbols:call', title: 'Télephone', description: '123-456-789' },
-    { icon: 'material-symbols:mail-rounded', title: 'Email', description: 'codecaqaze@gmail.com'},
-    { icon: 'material-symbols:location-on', title: 'Adresse', description: '1234 rue de la rue' }
+    { icon: 'material-symbols:call', title: 'Télephone', description: '+33 7 54 81 74 36' },
+    { icon: 'material-symbols:mail-rounded', title: 'Email', description: 'dsanyaronke@gmail.com'},
+    { icon: 'material-symbols:location-on', title: 'Adresse', description: 'Bordeaux' }
 ];
 
 const options = [
@@ -38,6 +38,8 @@ const state = reactive({
     message: undefined,
 })
 
+const message = ref<string | null>(null)
+
 async function onSubmit (event: FormSubmitEvent<Schema>) {
     const fields = {
         ...event.data,
@@ -49,6 +51,13 @@ async function onSubmit (event: FormSubmitEvent<Schema>) {
         watch: false
 
     });
+
+    if (data.value) {
+      message.value = "Votre message a été envoyé avec succès";
+    }
+    if (error.value) {
+        message.value = "Une erreur s'est produite lors de l'envoi de votre message";
+    }
 }
 
 const defaultColor= {
@@ -87,6 +96,10 @@ onMounted(animateImageIn)
                 <!-- Form -->
                 <div ref="contactForm" class="xl:w-[54%] order-2 xl:order-none" >
                     <div class="flex flex-col gap-6 p-10 bg-white/5 rounded-xl">
+                      <div v-if="message && message.trim()" class="p-5 bg-red-500">
+                        Une erreur s'est produite lors de l'envoi de votre message; <br>
+                        Veuillez contactez le numéro suivant: <span class="font-bold text-xl"> <br> +33 7 54 81 74 36</span>
+                      </div>
                         <h3 class="text4xl text-accent">
                             Collaborons ensemble
                         </h3>

@@ -23,7 +23,7 @@ onMounted(animateImageIn);
                 <div ref="description" class="text-center xl:text-left order-2 xl:order-none">
                     <p class="text-xl pb-4">Développeur Full Stack</p>
                     <h1 class="h1 mb-6">
-                        Hi, Je suis <br>
+                        Hello, Je suis <br>
                         <span class="text-accent">Daré Samuel</span>
                     </h1>
                     <p class="max-w-[500px] mb-9 text-gray-300">

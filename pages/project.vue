@@ -173,7 +173,7 @@ onMounted(animateImageIn)
                                     </div>
                                 </div>
                             </SwiperSlide>
-                            <WorkSliderBtns :slideNext="slideNext" :slidePrev="slidePrev"/>
+                            <WorkSliderBtns v-if="projects && projects.length > 1" :slideNext="slideNext" :slidePrev="slidePrev"/>
                         </Swiper>
                     </div>
                 </div>
