@@ -6,7 +6,7 @@ const items = [
         key: 'about-me',
         label: 'A Propos de Moi',
         icon: 'heroicons-outline:user-circle',
-        description: 'Passionné d\'informatique et autodidacte, il a transformé chaque défi en opportunité d\'apprentissage, acquérant une expertise fullstack en parallèle de son master en alternance. Sa détermination et sa capacité à allier théorie et pratique font de lui un candidat exceptionnel. Prêt à relever les défis les plus ambitieux, son parcours atypique témoigne de sa résilience et de son talent.',
+        description: 'Passionné d\'informatique et autodidacte, j\'ai transformé chaque défi en opportunité d\'apprentissage, acquérant ainsi une expertise fullstack en parallèle de mon master en alternance. Ma détermination et ma capacité à allier théorie et pratique font de moi un candidat exceptionnel. Prêt à relever les défis les plus ambitieux, mon parcours atypique témoigne de ma persévérance et de mon talent',
         data: [
             {name: 'Email', value: 'dsanyaronke@gmail.com',},
             {name: 'Adresse', value: 'Toute la France',},
