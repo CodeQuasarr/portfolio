@@ -4,16 +4,17 @@ import 'swiper/css';
 import gsap from "gsap";
 import project1Img from '~/assets/images/projects/project.png';
 import project2Img from '~/assets/images/projects/project2.png';
+import project3Img from '~/assets/images/projects/project3.png';
 const projects = [
     {
-        num: "02",
-        title: "Projet shop",
+        num: "03",
+        title: "PharmaFlow",
         category: "Fullstack",
-        description: "Cette application est une plateforme de commerce électronique construite avec Vue.js et TypeScript. Elle permet aux utilisateurs de parcourir les produits, d'ajouter des articles à leur panier, de passer des commandes et de gérer leurs factures.",
-        image: project2Img,
-        stack: [{name: "Laravel 11", color: "red"}, {name: "Vue Js", color: "green"}, {name: "MySQL", color: "white"}, {name: "Tailwind CSS", color: "blue"}],
-        github: "https://github.com/CodeQuasarr/barber_shop",
-        url: "https://main--barbershopperruque.netlify.app/"
+        description: "Cette application est une plateforme de démonstration dédiée à la gestion des stocks de médicaments. Elle permet de gérer efficacement les stocks, en offrant des outils performants pour suivre les entrées et sorties de médicaments, optimiser les approvisionnements, et éviter les ruptures de stock.",
+        image: project3Img,
+        stack: [{name: "Rest API Laravel", color: "red"}, {name: "Vue Js", color: "green"}, {name: "Pinia", color: "white"}, {name: "Tailwind CSS", color: "blue"}],
+        github: "https://github.com/CodeQuasarr/stock_management",
+        url: "https://github.com/CodeQuasarr/stock_management_api"
     },
     {
         num: "01",
@@ -24,6 +25,16 @@ const projects = [
         stack: [{name: "Vue 3", color: "red"}, {name: "Vue.js", color: "green"}, {name: "Tailwind Css", color: "green"}],
         github: "https://github.com/CodeQuasarr/netflixus_app",
         url: "https://main--stramview.netlify.app/"
+    },
+    {
+        num: "02",
+        title: "Projet shop",
+        category: "Fullstack",
+        description: "Cette application est une plateforme de commerce électronique construite avec Vue.js et TypeScript. Elle permet aux utilisateurs de parcourir les produits, d'ajouter des articles à leur panier, de passer des commandes et de gérer leurs factures.",
+        image: project2Img,
+        stack: [{name: "Laravel 11", color: "red"}, {name: "Vue Js", color: "green"}, {name: "MySQL", color: "white"}, {name: "Tailwind CSS", color: "blue"}],
+        github: "https://github.com/CodeQuasarr/barber_shop",
+        url: "https://main--barbershopperruque.netlify.app/"
     },
 ];
 
