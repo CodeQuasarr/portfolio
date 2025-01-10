@@ -89,6 +89,7 @@ const isOpen = ref(false)
                                     <ULink
                                         v-for="link in links"
                                         :key="link.to"
+                                        :to="link.to"
                                         active-class="border-b border-red-300 text-red-300"
                                         inactive-class="capitalize font-medium text-white hover:text-red-300 transition-colors duration-300"
                                     >
