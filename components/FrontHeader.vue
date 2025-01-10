@@ -61,7 +61,7 @@ const isOpen = ref(false)
                         {{ link.label }}
                     </ULink>
                 </nav>
-                <UButton to="/contact" class="bg-accent hover:bg-accent_hover text-black">Me recruter</UButton>
+                <UButton to="/contact" class="bg-accent hover:bg-accent_hover text-black">Me contacter</UButton>
             </div>
 
             <div class="xl:hidden">

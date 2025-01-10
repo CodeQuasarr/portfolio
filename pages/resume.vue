@@ -20,14 +20,19 @@ const items = [
         description: 'Découvrez mon parcours professionnel',
         data: [
             {
+                company: 'Groupe Full Ace',
+                position: 'Développeur Fullstack Laravel/Vue',
+                duration: '10 - 2024 au 12 - 2024',
+            },
+            {
                 company: 'Sayaris',
-                position: 'Développeur Fullstack',
-                duration: '2021 - Aujourd\'hui',
+                position: 'Développeur Fullstack Laravel/Vue',
+                duration: '07 - 2021 au 09 - 2024',
             },
             {
                 company: 'Particulier (Réseau PH)',
                 position: 'Développeur Freelance',
-                duration: 'Eté 2023',
+                duration: '10 - 2023 au 03 - 2024',
 
             }
         ]
@@ -92,7 +97,7 @@ const items = [
 <template>
     <UContainer>
         <UTabs
-            :defaultIndex="2"
+            :defaultIndex="3"
             :items="items"
             :ui="{
                 wrapper: 'flex flex-wrap xl:flex-nowrap gap-10',
