@@ -12,7 +12,7 @@ const projects = [
         category: "Fullstack",
         description: "Cette application est une plateforme de démonstration dédiée à la gestion des stocks de médicaments. Elle permet de gérer efficacement les stocks, en offrant des outils performants pour suivre les entrées et sorties de médicaments, optimiser les approvisionnements, et éviter les ruptures de stock.",
         image: project3Img,
-        stack: [{name: "Rest API Laravel", color: "red"}, {name: "Vue Js", color: "green"}, {name: "Pinia", color: "white"}, {name: "Tailwind CSS", color: "blue"}],
+        stack: [{name: "Rest API Laravel", color: "red"}, {name: "Vue Js", color: "green"}, {name: "Pinia", color: "white"}, {name: "Vitest", color: "blue"}],
         github: "https://github.com/CodeQuasarr/stock_management",
         url: "https://github.com/CodeQuasarr/stock_management_api"
     },
