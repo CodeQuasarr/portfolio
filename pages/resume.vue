@@ -74,6 +74,7 @@ const items = [
             {name: 'Python', icon: 'fa6-brands:python'},
             {name: 'PHP', icon: 'fa6-brands:php'},
             {name: 'Laravel', icon: 'teenyicons:laravel-outline'},
+            {name: 'Symfony', icon: 'tabler:brand-symfony'},
             {name: 'JavaScript', icon: 'fa6-brands:js'},
             {name: 'TypeScript', icon: 'simple-icons:typescript'},
             {name: 'VueJs', icon: 'teenyicons:vue-outline'},

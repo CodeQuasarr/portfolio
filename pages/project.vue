@@ -5,7 +5,18 @@ import gsap from "gsap";
 import project1Img from '~/assets/images/projects/project.png';
 import project2Img from '~/assets/images/projects/project2.png';
 import project3Img from '~/assets/images/projects/project3.png';
+import project4Img from '~/assets/images/projects/project4.png';
 const projects = [
+    {
+        num: "04",
+        title: "DocOnTime",
+        category: "Fullstack",
+        description: "Application de prise de rendez-vous chez un médecin, qui permet aux patients de consulter les disponibilités des médecins, de prendre rendez-vous en ligne, de recevoir des rappels de rendez-vous et de gérer leurs rendez-vous.",
+        image: project4Img,
+        stack: [{name: "Rest API Symfony", color: "red"}, {name: "Vue Js", color: "green"}],
+        github: "https://github.com/CodeQuasarr/doc_on_time_api",
+        url: "https://github.com/CodeQuasarr/doc_on_time"
+    },
     {
         num: "03",
         title: "PharmaFlow",

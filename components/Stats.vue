@@ -64,6 +64,7 @@ onMounted( () => {
                 v-for="(stat, index) in stats"
                 :key="'stat_'+index"
             >
+                <span v-if="stat.title ==='Années d\'expérience'" class="text-3xl xl:text-5xl font-extrabold">+</span>
                 <span class="text-3xl xl:text-5xl font-extrabold" :ref="el => counterRefs[index] = el"></span>
                 <p :class="[stat.title.length <15? 'max-w-[100px]': 'max-w-[150px]', 'text-gray-300']">{{ stat.title }}</p>
             </div>

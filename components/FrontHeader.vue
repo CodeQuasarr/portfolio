@@ -92,6 +92,7 @@ const isOpen = ref(false)
                                         :to="link.to"
                                         active-class="border-b border-red-300 text-red-300"
                                         inactive-class="capitalize font-medium text-white hover:text-red-300 transition-colors duration-300"
+                                        @click="isOpen = false"
                                     >
                                         {{ link.label }}
                                     </ULink>

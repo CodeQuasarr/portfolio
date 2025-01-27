@@ -27,8 +27,10 @@ onMounted(animateImageIn);
                         <span class="text-accent">Daré Samuel</span>
                     </h1>
                     <p class="max-w-[500px] mb-9 text-gray-300">
-                        J'excelle dans la création d'expériences numériques élégantes et je maîtrise divers langages de
-                        programmation et technologies.
+                        Passionné par le développement web moderne, je conçois et développe des applications performantes,
+                        scalables et centrées sur l'utilisateur. je transforme des idées en solutions digitales innovantes.
+                        Polyvalent et orienté vers l'excellence, je mets un point d'honneur à allier technologies avancées
+                        et expérience utilisateur optimale dans chacun de mes projets.
                     </p>
 
                     <div class="flex flex-col xl:flex-row items-center gap-8">
